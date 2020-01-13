@@ -18,5 +18,10 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "About|Makostagram"
   end
-
+  
+  test "should get contact" do
+    get contact_path
+    assert_response :success
+    assert_select "title", "Contact|Makostagram"
+  end
 end
