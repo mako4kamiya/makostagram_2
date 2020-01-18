@@ -10,7 +10,7 @@ gem 'sass-rails'
 gem 'webpacker'
 gem 'turbolinks'
 gem 'jbuilder'
-# gem 'bcrypt'
+gem 'bcrypt' #ハッシュ化する
 
 group :development, :test do
   gem 'byebug', platform: :mri
