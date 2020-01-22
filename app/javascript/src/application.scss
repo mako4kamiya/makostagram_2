@@ -19,6 +19,17 @@ header {
         width: 100%;
     }
 }
+.signup {
+    .signup-images {
+        position: relative;
+        .home_img2 {
+            width: 232px;
+            position: absolute;
+            top: 92px;
+            right: 73px;
+        }
+    }
+}
 
 /* forms */
 #error_explanation {
