@@ -1,4 +1,4 @@
-<% provide(:title, "Sign Up") %>
+<% provide(:title, "Login") %>
 <div class="login-signup row justify-content-center align-items-center">
     <div class="col-5 login-signup-images">
         <%= image_tag("home_img.png", alt:"home_img") %>
@@ -8,12 +8,11 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Makostagram</h5>
-                <%= form_for(@user) do |f| %>
-                    <%= render 'shared/error_messages' %>
-                    <div class="form-group">
-                        <%= f.label :name %>
-                        <%= f.text_field :name, class: "form-control" %>
-                    </div>
+                <%= form_for(:session, url: login_path) do |f| %>
+                    <% flash.each do |message_type, message| %>
+                        <div class="alert alert-<%= message_type %>"><%= message %></div>
+                    <% end %>
+
                     <div class="form-group">
                         <%= f.label :email %>
                         <%= f.email_field :email, class: "form-control" %>
@@ -22,14 +21,10 @@
                         <%= f.label :password %>
                         <%= f.password_field :password, class: "form-control" %>
                     </div>
-                    <div class="form-group">
-                        <%= f.label :password_confirmation, "Confirmation" %>
-                        <%= f.password_field :password_confirmations, class: "form-control" %>
-                    </div>
-                    <%= f.submit "Create my account", class: "btn btn-outline-dark" %>
+                    <%= f.submit "Log in", class: "btn btn-outline-dark" %>
                 </form>
                 <% end %>
-                アカウントをお持ちですか？<%= link_to "Login", root_path %>
+                アカウントをお持ちでないですか？<%= link_to "Signup", signup_path %>
             </div>
         </div>
     </div>
