@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <header class="border-bottom">
+    <header>
       <nav class="container fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="row justify-content-between align-items-center">
           <div class="col">
@@ -37,11 +37,17 @@
           </ul>
         </div>
       </nav>
+      <hr>
+      <div class="container">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+      </div>
     </header>
 
-    <div class="container mt-5">
+    <main class="container mt-5">
       <%= yield %>
-    </div>
+    </main>
 
     <footer class="container-fluid">
       <ul class="nav nav-tabs justify-content-between">

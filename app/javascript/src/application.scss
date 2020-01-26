@@ -8,7 +8,19 @@ body {
 
 /* header */
 header {
-    height: 60px;
+    .alert {
+        top: 60px;
+    }
+    hr {
+        width: 100%;
+        position: fixed;
+        top: 37px;
+        z-index: 1;
+    }
+}
+
+main {
+    top: 60px;
 }
 
 
